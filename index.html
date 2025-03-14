@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cuántos Aguacates Puedes Comprar Hoy?</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .ad-space {
+            width: 100%;
+            height: 250px;
+            background-color: #ddd;
+            text-align: center;
+            line-height: 250px;
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            font-size: 16px;
+        }
+        #resultado {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .chart-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .ad-space {
+                height: 80px;
+                line-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Espacio para anuncio -->
+        <div class="ad-space">
+            <!-- Aquí irá el código del anuncio de AdSense -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXX"  <!-- Reemplaza con tu ID de AdSense -->
+                data-ad-slot="XXXXXXX"           <!-- Reemplaza con tu ID de espacio de anuncio -->
+                data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="container">
+            <h1>¿Cuántos Aguacates Puedes Comprar Hoy? 🥑</h1>
+            <label for="sueldo">Introduce tu sueldo (€):</label>
+            <input type="number" id="sueldo" placeholder="Ejemplo: 1000">
+            <button onclick="calcularAguacates()">Calcular</button>
+            <p id="resultado"></p>
+        </div>
+
+        <!-- Espacio para otro anuncio -->
+        <div class="ad-space">
+            <!-- Aquí irá otro código de AdSense -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXX"  <!-- Reemplaza con tu ID de AdSense -->
+                data-ad-slot="XXXXXXX"
+                data-ad-format="auto"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="aguacateChart"></canvas>
+    </div>
+
+    <footer>
+        <p><a href="privacy.html" target="_blank">Política de Privacidad</a></p> <!-- Enlace a la política de privacidad -->
+    </footer>
+
+    <script>
+        function calcularAguacates() {
+            let sueldo = document.getElementById("sueldo").value;
+            let precioAguacate = 2.5; // Precio del aguacate en euros, puedes actualizarlo
+            let cantidad = Math.floor(sueldo / precioAguacate);
+            
+            if (sueldo > 0) {
+                document.getElementById("resultado").innerHTML = `Puedes comprar <b>${cantidad}</b> aguacates hoy.`;
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, introduce un sueldo válido.";
+            }
+        }
+
+        // Datos de precio del aguacate en diferentes países
+        const ctx = document.getElementById('aguacateChart').getContext('2d');
+        const aguacateChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['España', 'México', 'EE.UU.', 'Argentina', 'Colombia', 'Brasil'],
+                datasets: [{
+                    label: 'Precio del aguacate (€)',
+                    data: [2.5, 1.2, 2.8, 2.0, 1.5, 1.8],
+                    backgroundColor: ['#4caf50', '#ff9800', '#2196f3', '#e91e63', '#9c27b0', '#ff5722'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
