@@ -27,10 +27,18 @@
             height: 250px;
             background-color: #ddd;
             text-align: center;
-            line-height: 250px;
-            font-size: 16px;
-            color: #555;
             margin-top: 20px;
+            overflow: hidden; /* Para que las imágenes no se salgan del contenedor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ad-space img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Ajusta la imagen al tamaño del contenedor sin recortarla */
         }
         .container {
             background: white;
@@ -71,26 +79,18 @@
                 align-items: center;
             }
             .ad-space {
-                height: 80px;
-                line-height: 80px;
+                height: 150px; /* Ajusta la altura para móviles */
             }
         }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <!-- Espacio para anuncio -->
+        <!-- Espacio para anuncio 1 -->
         <div class="ad-space">
-            <!-- Aquí irá el código del anuncio de AdSense -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-XXXXXXX"  <!-- Reemplaza con tu ID de AdSense -->
-                data-ad-slot="XXXXXXX"           <!-- Reemplaza con tu ID de espacio de anuncio -->
-                data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <a href="https://amzn.to/4hyXATK" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/71+RjDGK+FL._AC_SX425_.jpg" alt="Banner Producto 1">
+            </a>
         </div>
 
         <div class="container">
@@ -101,18 +101,11 @@
             <p id="resultado"></p>
         </div>
 
-        <!-- Espacio para otro anuncio -->
+        <!-- Espacio para anuncio 2 -->
         <div class="ad-space">
-            <!-- Aquí irá otro código de AdSense -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-XXXXXXX"  <!-- Reemplaza con tu ID de AdSense -->
-                data-ad-slot="XXXXXXX"
-                data-ad-format="auto"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <a href="https://amzn.to/3FyPf5q" target="_blank">
+                <img src="https://m.media-amazon.com/images/I/81vBtg2-B7L._AC_SX425_PIbundle-4,TopRight,0,0_SH20_.jpg" alt="Banner Producto 2">
+            </a>
         </div>
     </div>
 
